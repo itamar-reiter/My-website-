@@ -2,7 +2,7 @@
 AOS.init({ duration: 400 });
 
 // Smooth scrolling for navigation links
-document.querySelectorAll("nav a").forEach((link) => {
+document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const targetId = link.getAttribute("href").substring(1);
@@ -30,23 +30,9 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-// Contact form toggle
-const contactBtn = document.getElementById("contactBtn");
-const contactForm = document.getElementById("contactForm");
-const closeForm = document.getElementById("closeForm");
-
-contactBtn.addEventListener("click", () => {
-  contactForm.classList.add("active");
-});
-
-closeForm.addEventListener("click", () => {
-  contactForm.classList.remove("active");
-});
-
 // Mobile menu toggle
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.querySelector(".nav-links");
-
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
