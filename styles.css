@@ -96,7 +96,7 @@ nav h1 {
 
 /* Product Overview Section */
 .product-overview {
-  padding: 50px 20px;
+  padding: 30px 20px; /* Reduced from 50px for better spacing */
 }
 .product-overview .content {
   display: flex;
@@ -113,18 +113,26 @@ nav h1 {
   border-radius: 10px;
 }
 .product-overview .image-placeholder {
-  flex: 1;
+  flex: 0.6; /* Reduced to prevent image dominance */
+  max-width: 40%; /* Limits image width */
   background: rgba(255, 255, 255, 0.2);
-  height: 300px;
+  height: 250px; /* Fixed height for consistency */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  overflow: hidden; /* Prevents image overflow */
+}
+.product-overview .image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio, crops excess */
   border-radius: 10px;
 }
 
 /* Features Section */
 .features {
-  padding: 50px 20px;
+  padding: 30px 20px; /* Reduced from 50px for better spacing */
   text-align: center;
 }
 .features h2 {
@@ -159,7 +167,7 @@ nav h1 {
 
 /* Technical Specifications Section */
 .specs {
-  padding: 50px 20px;
+  padding: 30px 20px; /* Reduced from 50px for better spacing */
   max-width: 600px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.1);
@@ -184,7 +192,7 @@ nav h1 {
 
 /* Why Choose Section */
 .why-choose {
-  padding: 50px 20px;
+  padding: 30px 20px; /* Reduced from 50px for better spacing */
 }
 .why-choose .content {
   display: flex;
@@ -195,12 +203,20 @@ nav h1 {
   margin: 0 auto;
 }
 .why-choose .image-placeholder {
-  flex: 1;
+  flex: 0.5; /* Reduced to prevent image dominance */
+  max-width: 40%; /* Limits image width */
   background: rgba(255, 255, 255, 0.2);
-  height: 300px;
+  max-height: 250px; /* Limits height to prevent overflow */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  overflow: hidden; /* Prevents image overflow */
+}
+.why-choose .image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio, crops excess */
   border-radius: 10px;
 }
 .why-choose .text {
@@ -212,7 +228,7 @@ nav h1 {
 
 /* About Section */
 .about {
-  padding: 50px 20px;
+  padding: 30px 20px; /* Reduced from 50px for better spacing */
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -284,9 +300,23 @@ footer a:hover {
   }
   .product-overview .image-placeholder,
   .why-choose .image-placeholder {
-    height: 200px;
+    flex: 1;
+    max-width: 100%; /* Full width on mobile */
+    height: 200px; /* Adjusted for mobile */
+    margin-bottom: 20px; /* Space below image */
+  }
+  .product-overview .image-placeholder img,
+  .why-choose .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .features .feature {
     flex: 1 1 100%;
   }
+}
+
+/* Optimize AOS Animations */
+[data-aos] {
+  transition: all 0.3s ease; /* Smooth transitions */
 }
